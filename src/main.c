@@ -38,6 +38,10 @@ int main(void)
 	GPIOA->MODER |= (0b01 << 14) | (0b01 << 12) | (0b01 << 4) | (0b01 << 2)  ; 	//pinos PA0, PA1, PA6 e PA7 no modo saída
 	GPIOE->PUPDR |= (0b01 << 8) | (0b01 << 6);								//habilita pull-up em PE4 e PE3
 
+	GPIOA->MODER &=~(0b11)  ;
+	GPIOA->PUPDR |= (0b10);
+
+
 
 	Delay_ms(100);	//aguarda sinais estabilizarem
 	while(1)
